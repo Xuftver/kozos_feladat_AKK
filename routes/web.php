@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('nyitolap');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('profiloldal');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(["admin"])->group(function()
 {
@@ -47,9 +47,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth.basic')->group(function () 
-{
-    Route::apiResource('');
-});
+// Route::middleware('auth.basic')->group(function () 
+// {
+//     Route::apiResource('');
+// });
 
 require __DIR__.'/auth.php';
