@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('nyitolap');
+Route::get('/', function () 
+{
+    // return view('nyitolap');
+    return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('profiloldal');
+Route::get('/dashboard', function () 
+{
+    // return view('profiloldal');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(["admin"])->group(function()
 {
