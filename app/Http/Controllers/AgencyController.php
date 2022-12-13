@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Agency;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AgencyController extends Controller
 {
@@ -34,4 +36,18 @@ class AgencyController extends Controller
         $agency = Agency::find($id);
         $agency->delete();
     }
+    /*public function updatePassword(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            "password" => 'string|min:3|max:50'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(["message" => $validator->errors()->all()], 400);
+        }
+        $user = Agency::where("id", $id)->update([
+            "password" => Hash::make($request->password),
+        ]);
+        return response()->json(["user" => $user]);
+    }*/
+
 }
