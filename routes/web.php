@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\ParticipateController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AgencyController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(["admin"])->group(function()
+{
+    Route::get('/api/users', [UserController::class,'index']);
+    Route::get('/api/users/{id}', [UserController::class,'show']);
+    Route::post('/api/users', [UserController::class,'store']);
+    Route::put('/api/users/{id}', [UserController::class,'update']);
+    Route::patch('/api/users/{id}', [UserController::class,'update']);
+    Route::delete('/api/users/{id}', [UserController::class,'destroy']);
 });
 
 //event
@@ -47,3 +57,16 @@ Route::middleware(['agency'])->group(function () {
     Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
     Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Route::middleware('auth.basic')->group(function () 
+// {
+//     Route::apiResource('');
+// });
+
+require __DIR__.'/auth.php';
