@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->tinyInteger('vip')->default(0);
+            $table->smallInteger("permission")->default(2); //0: admin felhasználó, 1:ügynökség, 2: normál felhasználó,
             $table->rememberToken();
             $table->timestamps();
         });
