@@ -47,8 +47,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Route::middleware('auth.basic')->group(function () {
-//     Route::apiResource('')
-// });
+Route::middleware('auth.basic')->group(function () 
+{
+    Route::apiResource('');
+});
 
 require __DIR__.'/auth.php';
