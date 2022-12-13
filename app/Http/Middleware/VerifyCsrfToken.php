@@ -14,5 +14,11 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/api/users/*',
         '/api/users',
+
+        //web.php api végpontok
+        '/api/agency/',
+        '/api/agencyupdate/*',
+        '/api/agencydestroy/*'
+
     ];
 }
