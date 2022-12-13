@@ -30,17 +30,20 @@ Route::post("/api/participates", [ParticipateController::class, "store"]);
 Route::put("/api/participates/{event_id}/{user_id}", [ParticipateController::class, "update"]);
 Route::delete("/api/participates/{event_id}/{user_id}", [ParticipateController::class, "destroy"]);
 //user
-Route::get('/api/users', [UserController::class,'index']);
-Route::get('/api/users/{id}', [UserController::class,'show']);
-Route::post('/api/users', [UserController::class,'store']);
-Route::put('/api/users/{id}', [UserController::class,'update']);
-Route::patch('/api/users/{id}', [UserController::class,'update']);
-Route::delete('/api/users/{id}', [UserController::class,'destroy']);
-Route::get('/api/agencies', [AgencyController::class, 'index']);
-Route::get('/api/agencies/{id}', [AgencyController::class, 'show']);
-//Middleware-->VerifyCsrfToken.php
-Route::post('/api/agency/',[AgencyController::class, 'store']);
-Route::put('/api/agencyupdate/{id}', [AgencyController::class, 'update']);
-Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
+Route::get('/api/users', [UserController::class, 'index']);
+Route::get('/api/users/{id}', [UserController::class, 'show']);
+Route::post('/api/users', [UserController::class, 'store']);
+Route::put('/api/users/{id}', [UserController::class, 'update']);
+Route::patch('/api/users/{id}', [UserController::class, 'update']);
+Route::delete('/api/users/{id}', [UserController::class, 'destroy']);
 
-Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
+Route::middleware(['agency'])->group(function () {
+    Route::apiResource('/agency', AgencyController::class);
+    Route::get('/api/agencies', [AgencyController::class, 'index']);
+    Route::get('/api/agencies/{id}', [AgencyController::class, 'show']);
+    //Middleware-->VerifyCsrfToken.php
+    Route::post('/api/agency/', [AgencyController::class, 'store']);
+    Route::put('/api/agencyupdate/{id}', [AgencyController::class, 'update']);
+    Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
+    Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
+});
