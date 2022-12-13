@@ -43,3 +43,4 @@ Route::post('/api/agency/',[AgencyController::class, 'store']);
 Route::put('/api/agencyupdate/{id}', [AgencyController::class, 'update']);
 Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
 
+Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
