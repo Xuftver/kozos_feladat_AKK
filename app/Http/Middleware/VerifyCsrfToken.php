@@ -15,6 +15,14 @@ class VerifyCsrfToken extends Middleware
         "/api/events",
         "/api/events/*",
         "/api/participates",
-        "/api/participates/*/*"
+        "/api/participates/*/*",
+        '/api/users/*',
+        '/api/users',
+
+        //web.php api végpontok
+        '/api/agency/',
+        '/api/agencyupdate/*',
+        '/api/agencydestroy/*'
+
     ];
 }
