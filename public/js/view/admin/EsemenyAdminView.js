@@ -6,13 +6,13 @@ class EsemenyAdminView
         this.#elem=elem;
         // console.log("EsemenyAdminView");
         szuloElem.append(`<tr>
-            <td>${elem.event_id}</td>
-            <td>${elem.name}</td>
-            <td>${elem.agency_id}</td>
-            <td>${elem.limit}</td>
-            <td>${elem.date}</td>
-            <td>${elem.location}</td>
-            <td>${elem.status}</td>
+            <td class="id">${elem.event_id}</td>
+            <td class="nev">${elem.name}</td>
+            <td class="id">${elem.agency_id}</td>
+            <td class="ferohely">${elem.limit}</td>
+            <td class="idopont">${elem.date}</td>
+            <td class="helyszin">${elem.location}</td>
+            <td class="statusz">${elem.status}</td>
         </tr>`);
         // <td><button id="modosit${elem.id}">Módosít</button></td>
         // <td><button id="torol${elem.id}">Töröl</button></td>

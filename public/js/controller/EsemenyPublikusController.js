@@ -12,15 +12,12 @@ class EsemenyPublikusController
         // this.vegpont="http://localhost:8000/api/events";
         this.vegpont="http://127.0.0.1:8000/api/events";
 
-        $("#publikusEsemeny").on("click", ()=>
-        {
-            adatBeolvasModell.adatBe(this.vegpont, this.esemenyAdatok)
-        });
+        adatBeolvasModell.adatBe(this.vegpont, this.esemenyAdatok);
     }
 
     esemenyAdatok(tomb)
     {
-        const szuloElem = $("main")
+        const szuloElem = $("article");
         new EsemenyekPublikusView(tomb, szuloElem)
     }
 }

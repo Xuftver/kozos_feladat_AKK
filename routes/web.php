@@ -32,6 +32,21 @@ Route::get('/dashboard', function ()
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get("/esemenyek", function()
+{
+    return view("publikusEsemenyek");
+});
+
+Route::get("/admin_esemenyek", function()
+{
+    return view("adminEsemenyek");
+}); 
+
+Route::get("/admin_ugynoksegek", function()
+{
+    return view("adminUgynoksegek");
+}); 
+
 // Route::middleware(["admin"])->group(function()
 // {
 //     Route::get('/api/users', [UserController::class,'index']);

@@ -11,17 +11,21 @@
     <title>Weinberger Péter</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <!-- <li id="publikusEsemeny"><a href="./publikusEsemenyek">Publikus Esemény</a></li> -->
-            <li id="publikusEsemeny"><a href="#">Publikus Esemény</a></li>
-            <li id="esemenyAdmin"><a href="#">Esemény Admin</a></li>
-            <li id="ugynoksegAdmin"><a href="#">Ügynökség Admin</a></li>
-        </ul>
-    </nav>
     <main>
-        
+        <header>
+            <nav>
+                <ul>
+                    <!-- <li id="publikusEsemeny"><a href="#">Publikus Esemény</a></li> -->
+                    <li id="publikusEsemeny"><a href="esemenyek">Publikus Esemény</a></li>
+                    <!-- <li id="esemenyAdmin"><a href="#">Esemény Admin</a></li> -->
+                    <li id="esemenyAdmin"><a href="admin_esemenyek">Esemény Admin</a></li>
+                    <!-- <li id="ugynoksegAdmin"><a href="#">Ügynökség Admin</a></li> -->
+                    <li id="ugynoksegAdmin"><a href="admin_ugynoksegek">Ügynökség Admin</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article></article>
+        <footer></footer>
     </main>
-    <div id="kosarDiv"></div>
 </body>
 </html>

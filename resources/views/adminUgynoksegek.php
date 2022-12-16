@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/../css/publikusEsemenyek.css">
+    <link rel="stylesheet" href="/../css/adminEsemenyek.css">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="/../js/utvonal/PublikusEsemenyek.js" type="module"></script>
-    <title>Ügynökség | Események</title>
+    <script src="/../js/utvonal/AdminUgynoksegek.js" type="module"></script>
+    <title>Admin | Ügynökségek</title>
 </head>
 <body>
     <main>

@@ -1,11 +1,7 @@
-import EsemenyAdminController from "./controller/EsemenyAdminController.js";
-import EsemenyPublikusController from "./controller/EsemenyPublikusController.js";
-import UgynoksegAdminController from "./controller/UgynoksegAdminController.js";
+import FooterKinezet from "./designe/FooterKinezet.js";
 
 $(function()
 {
     console.log("index.js");
-    new EsemenyAdminController;
-    new EsemenyPublikusController;
-    new UgynoksegAdminController;
+    new FooterKinezet;
 });

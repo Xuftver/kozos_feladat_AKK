@@ -12,15 +12,15 @@ class UgynoksegAdminController
         // this.vegpont="http://localhost:8000/api/agencies";
         this.vegpont="http://127.0.0.1:8000/api/agencies";
 
-        $("#ugynoksegAdmin").on("click", ()=>
-        {
-            adatBeolvasModell.adatBe(this.vegpont, this.ugynoksegAdatok)
-        });
+        adatBeolvasModell.adatBe(this.vegpont, this.ugynoksegAdatok)
+        // $("#ugynoksegAdmin").on("click", ()=>
+        // {
+        // });
     }
 
     ugynoksegAdatok(tomb)
     {
-        const szuloElem=$("main");
+        const szuloElem=$("article");
         new UgynoksegekAdminView(tomb, szuloElem);
     }
 }
