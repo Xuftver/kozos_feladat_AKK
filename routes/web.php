@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ParticipateController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,23 +21,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () 
 {
     // return view('nyitolap');
+    // return view('welcome');
     return view('index');
-})->middleware();
+});
+// ->middleware(["agency"])->name("index");
 
 Route::get('/dashboard', function () 
 {
     // return view('profiloldal');
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::middleware(["admin"])->group(function()
-{
-    Route::get('/api/users', [UserController::class,'index']);
-    Route::get('/api/users/{id}', [UserController::class,'show']);
-    Route::post('/api/users', [UserController::class,'store']);
-    Route::put('/api/users/{id}', [UserController::class,'update']);
-    Route::patch('/api/users/{id}', [UserController::class,'update']);
-    Route::delete('/api/users/{id}', [UserController::class,'destroy']);
-});
+
+// Route::middleware(["admin"])->group(function()
+// {
+//     Route::get('/api/users', [UserController::class,'index']);
+//     Route::get('/api/users/{id}', [UserController::class,'show']);
+//     Route::post('/api/users', [UserController::class,'store']);
+//     Route::put('/api/users/{id}', [UserController::class,'update']);
+//     Route::patch('/api/users/{id}', [UserController::class,'update']);
+//     Route::delete('/api/users/{id}', [UserController::class,'destroy']);
+// });
 
 //event
 // Route::apiResource("/api/events", EventController::class);
@@ -57,16 +63,21 @@ Route::put('/api/users/{id}', [UserController::class, 'update']);
 Route::patch('/api/users/{id}', [UserController::class, 'update']);
 Route::delete('/api/users/{id}', [UserController::class, 'destroy']);
 
-Route::middleware(['agency'])->group(function () {
-    Route::apiResource('/agency', AgencyController::class);
-    Route::get('/api/agencies', [AgencyController::class, 'index']);
-    Route::get('/api/agencies/{id}', [AgencyController::class, 'show']);
-    //Middleware-->VerifyCsrfToken.php
-    Route::post('/api/agency/', [AgencyController::class, 'store']);
-    Route::put('/api/agencyupdate/{id}', [AgencyController::class, 'update']);
-    Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
-    Route::delete('/api/agencydestroy/{id}', [AgencyController::class, 'destroy']);
-});
+//agency
+Route::get('/api/agencies', [AgencyController::class, 'index']);
+Route::get('/api/agencies/{id}', [AgencyController::class, 'show']);
+Route::post('/api/agencies', [AgencyController::class, 'store']);
+Route::put('/api/agencies/{id}', [AgencyController::class, 'update']);
+Route::delete('/api/agencies/{id}', [AgencyController::class, 'destroy']);
+
+// Route::middleware(['agency'])->group(function () 
+// {
+//     Route::get('/api/agencies', [AgencyController::class, 'index']);
+//     Route::get('/api/agencies/{id}', [AgencyController::class, 'show']);
+//     Route::post('/api/agencies', [AgencyController::class, 'store']);
+//     Route::put('/api/agencies/{id}', [AgencyController::class, 'update']);
+//     Route::delete('/api/agencies/{id}', [AgencyController::class, 'destroy']);
+// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

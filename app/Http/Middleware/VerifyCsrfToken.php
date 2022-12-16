@@ -12,17 +12,14 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
+        //web.php api végpontok
         "/api/events",
         "/api/events/*",
         "/api/participates",
         "/api/participates/*/*",
         '/api/users/*',
         '/api/users',
-
-        //web.php api végpontok
-        '/api/agency/',
-        '/api/agencyupdate/*',
-        '/api/agencydestroy/*'
-
+        '/api/agencies/',
+        '/api/agencies/*',
     ];
 }

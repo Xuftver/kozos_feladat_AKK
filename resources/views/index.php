@@ -13,9 +13,9 @@
 <body>
     <nav>
         <ul>
-            <li id="public"><a href="#">Publikus</a></li>
-            <li id="admin"><a href="#">admin</a></li>
-            <!-- <li id="kosar"><a href="#">kosár</a></li> -->
+            <li id="publikusEsemeny"><a href="#">Publikus Esemény</a></li>
+            <li id="esemenyAdmin"><a href="#">Esemény Admin</a></li>
+            <li id="ugynoksegAdmin"><a href="#">Ügynökség Admin</a></li>
         </ul>
     </nav>
     <main>

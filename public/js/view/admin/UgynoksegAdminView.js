@@ -1,8 +1,18 @@
 class UgynoksegAdminView
 {
-    constructor()
+    #elem
+    constructor(elem, szuloElem)
     {
-        console.log("UgynoksegAdminView");
+        this.#elem=elem;
+        // console.log("UgynoksegAdminView");
+        szuloElem.append(`<tr>
+            <td>${elem.agency_id}</td>
+            <td>${elem.name}</td>
+            <td>${elem.country}</td>
+            <td>${elem.type}</td>
+        </tr>`);
+
+        this.sorElem=szuloElem.children("tr:last-child");
     }
 }
 export default UgynoksegAdminView;
