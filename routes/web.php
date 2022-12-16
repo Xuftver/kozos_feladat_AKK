@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () 
 {
     // return view('nyitolap');
-    return view('welcome');
-});
+    return view('index');
+})->middleware();
 
 Route::get('/dashboard', function () 
 {
@@ -27,6 +27,9 @@ Route::get('/dashboard', function ()
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(["admin"])->group(function()
 {
+    //event
+    Route::apiResource("/api/events", EventController::class);
+
     Route::get('/api/users', [UserController::class,'index']);
     Route::get('/api/users/{id}', [UserController::class,'show']);
     Route::post('/api/users', [UserController::class,'store']);
@@ -35,8 +38,7 @@ Route::middleware(["admin"])->group(function()
     Route::delete('/api/users/{id}', [UserController::class,'destroy']);
 });
 
-//event
-Route::apiResource("/api/events", EventController::class);
+
 // participate
 Route::get("/api/participates", [ParticipateController::class, "index"]);
 Route::get("/api/participates/{event_id}/{user_id}", [ParticipateController::class, "show"]);
