@@ -13,7 +13,7 @@ class EsemenyekAdminView
                 <th>Férőhely</th>
                 <th>Időpont</th>
                 <th>Helyszín</th>
-                <th>Státáusz</th>
+                <th>Státusz</th>
             </tr>
         </thead>
         <tbody></tbody>

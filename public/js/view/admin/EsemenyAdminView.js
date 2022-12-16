@@ -20,12 +20,12 @@ class EsemenyAdminView
         this.sorElem=szuloElem.children("tr:last-child");
         console.log(this.sorElem);
 
-        kattintasTrigger(esemenyNeve)
-    {
-        console.log("triggerben",esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve,{detail:this.#elem});
-        window.dispatchEvent(esemeny);
-    }
+        // kattintasTrigger(esemenyNeve)
+        // {
+        //     console.log("triggerben",esemenyNeve);
+        //     const esemeny = new CustomEvent(esemenyNeve,{detail:this.#elem});
+        //     window.dispatchEvent(esemeny);
+        // }
     }
 }
 export default EsemenyAdminView;
