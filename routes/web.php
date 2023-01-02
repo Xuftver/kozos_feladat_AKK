@@ -22,29 +22,30 @@ Route::get('/', function ()
 {
     // return view('nyitolap');
     // return view('welcome');
-    return view('index');
+    return view('oldalak/index');
 });
 // ->middleware(["agency"])->name("index");
 
 Route::get('/dashboard', function () 
 {
     // return view('profiloldal');
-    return view('dashboard');
+    return view('dashboarsd');
+    // return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get("/esemenyek", function()
 {
-    return view("publikusEsemenyek");
+    return view("oldalak/publikusEsemenyek");
 });
 
 Route::get("/admin_esemenyek", function()
 {
-    return view("adminEsemenyek");
+    return view("oldalak/adminEsemenyek");
 }); 
 
 Route::get("/admin_ugynoksegek", function()
 {
-    return view("adminUgynoksegek");
+    return view("oldalak/adminUgynoksegek");
 }); 
 
 // Route::middleware(["admin"])->group(function()
